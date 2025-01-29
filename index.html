@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <title>Registration Form</title>
+</head>
+<body>
+    <div id="cont">
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <h1>Registration Form</h1>
+            <h3 id="signup">Sign Up</h3>
+
+            <!-- Personal Information Section -->
+            <section>
+                <h3>Personal Information</h3>
+                <label for="fname">First Name</label> <br>
+                <input type="text" id="fname" name="fname" placeholder="Rozen"> <br>
+                <label for="mname">Middle Name</label> <br>
+                <input type="text" id="mname" name="mname" placeholder="Madrigal"> <br>
+                <label for="lname">Last Name</label> <br>
+                <input type="text" id="lname" name="lname" placeholder="Elizalde"> <br> <br>
+
+                <label for="gender">Gender</label> <br>
+                <input type="radio" id="male" name="gender" value="Male"> Male <br>
+                <input type="radio" id="female" name="gender" value="Female"> Female <br>
+                <input type="radio" id="other" name="gender" value="Other"> Other <br>
+                <br>
+
+                <label for="dob">Date of Birth</label> <br>
+                <input type="date" id="dob" name="dob"> <br><br>
+
+                <label for="email">Email Address</label> <br>
+                <input type="email" id="email" name="email" placeholder="rozensopogi@gmail.com"> <br><br>
+
+                <label for="phonenum">Phone Number</label> <br>
+                <input type="number" id="phonenum" name="phonenum" placeholder="09123456789"> <br><br>
+
+                <label for="maritalstats">Marital Status</label> <br>
+                <input type="radio" id="single" name="maritalstats" value="Single"> Single <br>
+                <input type="radio" id="married" name="maritalstats" value="Married"> Married <br>
+                <input type="radio" id="divorced" name="maritalstats" value="Divorced"> Divorced <br>
+                <input type="radio" id="widowed" name="maritalstats" value="Widowed"> Widowed <br>
+            </section>
+
+            <!-- Address Information Section -->
+            <section>
+                <h3>Address Information</h3>
+                <label for="province">Province</label> <br>
+                <select name="province" id="province" onchange="updateCities()">
+                    <option value="">Select Province</option>
+                    <option value="Laguna">Laguna</option>
+                    <option value="Pampanga">Pampanga</option>
+                    <option value="Batangas">Batangas</option>
+                    <option value="Rizal">Rizal</option>
+                    <option value="Bulacan">Bulacan</option>
+                </select> <br>
+
+                <label for="city">City/Municipality</label> <br>
+                <select id="city" name="city" onchange="updateBarangays()">
+                    <option value="">Select City/Municipality</option>
+                </select> <br>
+
+                <label for="barangay">Barangay</label> <br>
+                <select id="barangay" name="barangay">
+                    <option value="">Select Barangay</option>
+                </select>
+            </section>
+
+            <!-- Employee Information Section -->
+            <section>
+                <h3>Employee Information</h3>
+                <label for="position">Position/Job Title</label> <br>
+                <input type="text" id="position" name="position" placeholder="Software Engineer"> <br>
+                <label for="dept">Department</label> <br>
+                <input type="text" id="dept" name="dept" placeholder="IT Department"> <br>
+                <label for="employee-id">Employee ID</label> <br>
+                <input type="text" id="employee-id" name="employee-id" placeholder="2023-1001"> <br>
+                <label for="hiredate">Date of Hire</label> <br>
+                <input type="date" id="hiredate" name="hiredate"> <br>
+                <label for="emptype">Employment Type</label> <br>
+                <input type="radio" id="full-time" name="emptype" value="Full-time"> Full-time <br>
+                <input type="radio" id="part-time" name="emptype" value="Part-time"> Part-time <br>
+                <input type="radio" id="contract" name="emptype" value="Contract"> Contract <br>
+            </section>
+
+            <!-- Educational Background Section -->
+            <section>
+                <h3>Educational Background</h3>
+                <label for="degree">Highest Degree</label> <br>
+                <input type="text" id="degree" name="degree" placeholder="Highschool"> <br>
+                <label for="university">University/Institution</label> <br>
+                <input type="text" id="university" name="university" placeholder="Polytechnic University of the Philippines"> <br>
+            </section>
+
+            <!-- Work Experience Section -->
+            <section>
+                <h3>Work Experience</h3>
+                <label for="position">Previous Position</label> <br>
+                <input type="text" id="position" name="position" placeholder="Graphic Designer"> <br>
+                <label for="company">Company</label> <br>
+                <input type="text" id="company" name="company" placeholder="RS Corporation"> <br>
+                <label for="duration">Employment Duration</label> <br>
+                <input type="text" id="duration" name="duration" placeholder="4 years"> <br>
+            </section>
+
+            <!-- Document Uploads Section -->
+            <section>
+                <h3>Document Uploads</h3>
+                <label for="resume">Resume/CV</label> <br>
+                <input type="file" id="resume" name="resume" required><br>
+                <label for="picture">2x2 Picture</label> <br>
+                <input type="file" id="picture" name="picture" required><br>
+            </section>
+
+            <!-- Agreement Section -->
+            <section>
+                <br>
+                <input type="checkbox" id="agree" name="agreement"> <a class="link" href="cuteko.com">Agreement with Company Policies</a>. I agree to comply with the company's policies and guidelines. <br>
+                <input type="checkbox" id="acknowledge" name="acknowledgment"> <a class="link" href="cuteko.com"> Acknowledgement of Terms & Conditions</a>. I acknowledge that I have read and understood the terms and conditions. <br>
+                <input type="submit" name="submit" value="Submit">
+                <a id="click" href="login.html">Log In</a>
+            </section>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
