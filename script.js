@@ -1,28 +1,47 @@
+// Fetch users from the JSON file using AJAX
+async function fetchUsersFromJSON() {
+    try {
+        const response = await fetch('http://localhost:3000/users'); // Use JSON Server endpoint
+        if (!response.ok) throw new Error('Failed to fetch users');
+        const users = await response.json();
+        console.log('Users loaded from JSON:', users);
+        // You can then use `users` data here
+    } catch (error) {
+        console.error('Error loading users:', error);
+    }
+}
+
 $(document).ready(function() {
+    // Fetch users when the page loads
+    fetchUsersFromJSON();
+
     // Handle form submission
     $('#regForm').on('submit', function(event) {
         event.preventDefault(); // Prevent the default form submission
-
+    
         var formData = new FormData(this); // Collect form data
-
+        var dataObject = {};
+    
+        // Convert FormData to JSON
+        formData.forEach((value, key) => {
+            dataObject[key] = value;
+        });
+    
         // Send data via AJAX
         $.ajax({
-            url: '/upload', // Server-side URL where form data will be submitted
+            url: 'http://localhost:3000/users', // Server-side URL where form data will be submitted
             type: 'POST',
-            data: formData,
-            processData: false,
-            contentType: false,
+            data: JSON.stringify(dataObject),
+            contentType: 'application/json', // Send JSON data
             success: function(response) {
-                // Handle success (response is expected to be JSON)
                 alert('Form submitted successfully!');
                 console.log(response); // Server response (could be a JSON message)
             },
             error: function(xhr, status, error) {
-                // Handle error
                 alert('Error submitting form: ' + error);
             }
         });
-    });
+    });    
 });
 
 // Call updateCities when the province dropdown changes

@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Log In</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <section class="section">
+    <form id="logIn" action="/upload" method="GET" enctype="multipart/form-data">
         <h2 id="log-in">Log In</h2>
-        <label for="username">Username</label> <br>
-        <input type="text" name="username" placeholder="rosenelizalde" required> <br>
+        <label for="email">Email</label> <br>
+        <input type="text" id="email" name="email" placeholder="rosenelizalde@gmail.com" required> <br>
         <label for="password">Password</label> <br>
-        <input type="password" name="password" placeholder="********" required> <br>
+        <input type="password" id="password" name="password" placeholder="********" required> <br>
         <input type="submit" name="submit" value="Log In">
+    </form>
     </section>
+    
+    <script src="login.js"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="cont">
-        <form id="regForm" action="/submit" method="POST" enctype="multipart/form-data">
+        <form id="regForm" action="/upload" method="POST" enctype="multipart/form-data">
             <h1>Registration Form</h1>
             <h3 id="signup">Sign Up</h3>
 
@@ -38,11 +38,8 @@
                 <label for="phonenum">Phone Number</label> <br>
                 <input type="number" id="phonenum" name="phonenum" placeholder="09123456789"> <br><br>
 
-                <label for="maritalstats">Marital Status</label> <br>
-                <input type="radio" id="single" name="maritalstats" value="Single"> Single <br>
-                <input type="radio" id="married" name="maritalstats" value="Married"> Married <br>
-                <input type="radio" id="divorced" name="maritalstats" value="Divorced"> Divorced <br>
-                <input type="radio" id="widowed" name="maritalstats" value="Widowed"> Widowed <br>
+                <label for="password">Password: </label> <br>
+                <input type="password" id="password" name="password" placeholder="Password"> <br><br>
             </section>
 
             <!-- Address Information Section -->
@@ -78,12 +75,6 @@
                 <input type="text" id="dept" name="dept" placeholder="IT Department"> <br>
                 <label for="employee-id">Employee ID</label> <br>
                 <input type="text" id="employee-id" name="employee-id" placeholder="2023-1001"> <br>
-                <label for="hiredate">Date of Hire</label> <br>
-                <input type="date" id="hiredate" name="hiredate"> <br>
-                <label for="emptype">Employment Type</label> <br>
-                <input type="radio" id="full-time" name="emptype" value="Full-time"> Full-time <br>
-                <input type="radio" id="part-time" name="emptype" value="Part-time"> Part-time <br>
-                <input type="radio" id="contract" name="emptype" value="Contract"> Contract <br>
             </section>
 
             <!-- Educational Background Section -->
@@ -93,26 +84,6 @@
                 <input type="text" id="degree" name="degree" placeholder="Highschool"> <br>
                 <label for="university">University/Institution</label> <br>
                 <input type="text" id="university" name="university" placeholder="Polytechnic University of the Philippines"> <br>
-            </section>
-
-            <!-- Work Experience Section -->
-            <section>
-                <h3>Work Experience</h3>
-                <label for="position">Previous Position</label> <br>
-                <input type="text" id="position" name="position" placeholder="Graphic Designer"> <br>
-                <label for="company">Company</label> <br>
-                <input type="text" id="company" name="company" placeholder="RS Corporation"> <br>
-                <label for="duration">Employment Duration</label> <br>
-                <input type="text" id="duration" name="duration" placeholder="4 years"> <br>
-            </section>
-
-            <!-- Document Uploads Section -->
-            <section>
-                <h3>Document Uploads</h3>
-                <label for="resume">Resume/CV</label> <br>
-                <input type="file" id="resume" name="resume" required><br>
-                <label for="picture">2x2 Picture</label> <br>
-                <input type="file" id="picture" name="picture" required><br>
             </section>
 
             <!-- Agreement Section -->
