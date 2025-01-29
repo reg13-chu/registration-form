@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
     // Handle form submission
     $('#regForm').on('submit', function(event) {
